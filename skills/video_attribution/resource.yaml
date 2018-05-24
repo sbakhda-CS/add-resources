@@ -1,0 +1,20 @@
+{
+    "name": "video_attribution",
+    "title": "Video Attribution",
+    "description": "Detects the objects in a video and attributes the identified objects",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

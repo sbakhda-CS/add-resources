@@ -1,0 +1,25 @@
+{
+    "name": "debt_risk_analyzer",
+    "title": "Debt Risk Analyzer",
+    "description": "Provide list of accounts that are at high risk to go into bad debt after 120 days of invoicing",
+    "type": {
+        "name": "agent"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Healthcare",
+            "value": "agent.industry.financial_services.healthcare"
+        }
+    ]
+}

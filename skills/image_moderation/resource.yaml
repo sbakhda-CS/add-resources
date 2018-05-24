@@ -1,0 +1,20 @@
+{
+    "name": "image_moderation",
+    "title": "Image Moderation",
+    "description": "Enhance your ability to detect potentially offensive or unwanted images through machine learning-based classifiers, custom lists, and optical character recognition (OCR).",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

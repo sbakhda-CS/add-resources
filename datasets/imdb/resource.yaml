@@ -1,0 +1,25 @@
+{
+    "name": "imdb",
+    "title": "IMDB",
+    "description": "50K movie reviews",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Commerce",
+            "value": "dataset.industry.commerce"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "image_captioning",
+    "title": "Image Captioning",
+    "description": "This operation extracts a rich set of visual features based on the image content.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

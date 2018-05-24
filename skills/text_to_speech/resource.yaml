@@ -1,0 +1,20 @@
+{
+    "name": "text_to_speech",
+    "title": "Text To Speech",
+    "description": "Converts user input text to spoken audio.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

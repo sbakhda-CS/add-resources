@@ -1,0 +1,20 @@
+{
+    "name": "news_insights",
+    "title": "News Insights",
+    "description": "Quickly find insights in the News data collected in recent news articles. Explore a company details",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

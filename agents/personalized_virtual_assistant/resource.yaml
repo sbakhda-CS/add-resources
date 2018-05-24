@@ -1,0 +1,20 @@
+{
+    "name": "personalized_virtual_assistant",
+    "title": "Personalized Virtual Assistant",
+    "description": "Achieve workforce productivity by providing desired useful insights to an employee in a timely manner",
+    "type": {
+        "name": "agent"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

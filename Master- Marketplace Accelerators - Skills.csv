@@ -1,0 +1,64 @@
+Cortex Skill,Description,Requires 3rd Party API,Cognitive Function,Vendor,Cognitive Scale,Azure*,Google*,IBM Watson*,AWS*,Algorothmia*,Solution Pattern,Machine Learning,Deployment,Industry
+Application usage feedback,This skill interprets user behavior through application usage as feedback for training.,,,CognitiveScale,X,,,,,,,,,
+Linear Classifier with business driven model agnostic explanations,Predict the confidence of an match exception code to be added to a rejected invoice based on historical data,,,CognitiveScale,X,,,,,,,,,
+Classifier with domain driven feature engineering,Provide list of accounts that are at high risk to go into bad debt after 120 days of invoicing,,,CognitiveScale,X,,,,,,,,,
+Constraint Solver Model using OR Tools,Provide optimal appointment recommendations to schedulers based on patient preferences and defined parameters,,,CognitiveScale,X,,,,,,,,,
+Text classification skill for client complaint,Classifying complaints to help automate process for better customer service,,,CognitiveScale,X,,,,,,,,,
+Video Attribution,Detects the objects in a video and attributes the identified objects,,Vision :: Segmentation,CognitiveScale,X,,,,,,GENERAL,Function :: Deep Learning,On-prem,All
+Churn Prediction,Machine learning-based interventions to reduce abandonments,,,CognitiveScale,X,,,,,,ENGAGE :: Personalized User Engagement,"Style :: Supervised, Function :: Regression",On-prem,All
+Video Object Recognition,Identifies objects in a video,,"Vision :: Captioning, Vision :: Segmentation",CognitiveScale,X,,,,,,GENERAL,Function :: Deep Learning,On-prem,All
+Video Scene Recognition,"Identifies the scenes (architecture, beach, sports etc.) in a video",,"Vision :: Captioning, Vision :: Segmentation",CognitiveScale,X,,,,,,GENERAL,Function :: Deep Learning,On-prem,All
+Entity Extraction and Linking,"Pasring a doc, identify key entities/objects and link to wikipedia or other knowledge bases",,Language :: Entity Analysis,CognitiveScale,X,,,,,,GENERAL,"Function :: Deep Learning, Style :: Supervised",On-prem,All
+Dynamic Topic Model,Temporal change in dominant topics,,Language :: Understanding,CognitiveScale,X,,,,,,AMPLIFY :: Risk & Opportunity Surveillance,"Style :: Unsupervised, Function :: Bayesian",On-prem,All
+Optical Character Recognition**,Optical character recognition from an image with a bounding box with coordinates,,Vision :: Text Recognition,CognitiveScale,X,,,,,,GENERAL,,On-prem,All
+Visual Search**,Take a picture of an item and search for it in a host of catalogs,,Knowledge :: Search,CognitiveScale,X,,,,,,GENERAL,Function :: Deep Learning,On-prem,All
+Document Corpus Summarization**,Efficiently going through a large set of documents and summarize the content for the users,,Language :: Summarization,CognitiveScale,X,,,,,,AMPLIFY :: Risk & Opportunity Surveillance,,On-prem,All
+Image Content Classifier,"Provides the information about an image, if it contains any Adult Content, if the image is having any Racist characteristics, any signs of violence, it is a spoof content or any medical characteristics",X,Vision :: Labeling,"Google, Azure",,X,X,,,,GENERAL,,Cloud,All
+Text Classifier,Content Classification analyses a document and returns a list of content categories that apply to the text found in the document,,Language :: Understanding,Google,,,X,,,,GENERAL,Function :: Deep Learning,On-prem,All
+Text Parsing,Provides access to natural language processing (NLP) tools that identify the structure of text,,Language :: Tokenization,Azure,X,X,,,,,GENERAL,Style :: Semi-Supervised,On-prem,All
+Sentiment Analysis,"Inspects text and returns an inference of the prevailing sentiment (POSITIVE, NEUTRAL, MIXED, or NEGATIVE)",,Language :: Sentiment,"AWS, Google, IBM Watson, Algorithmia",X,,X,X,X,X,GENERAL,"Style :: Supervised, Function :: Deep Learning",On-prem,All
+Term Sentiment,"Detects the sentiment of given word in a document by splitting sentences into terms. Sentiments are scored between 0-4. (Very Negative, Negative, Neutral, Positive, Very Positive).",,Language :: Sentiment,Algorithmia,,,,,,X,GENERAL,Style :: Supervised,On-prem,All
+Text Summarization,Provides a brief summary of the input text.,,Language :: Summarization,Algorithmia,,,,,,X,GENERAL,,On-prem,All
+Language Understanding,Identify the important parts in the given input text and summarizes the content.,X,Language :: Understanding,"AWS, IBM Watson, Azure",,X,,X,X,,GENERAL,,Cloud,All
+Text Similarity,This algorithm will compare documents (can be any kind of document) and report which documents are the most similar .,,Language :: Understanding,Algotrithmia,,,,,,X,GENERAL,Function :: Deep Learning,On-prem,All
+Detecting Coreferences,This algorithm gives list of maps in a text as an entity(key) and a list of other mentions of that entity as values.,X,Language :: Relation Extraction,Algorithmia,,,,,,X,GENERAL,,Cloud,All
+Language Detection,Detect the natural language of the supplied text.,,Language :: Translation,"AWS, Google, Azure",X,X,X,,X,,GENERAL,,On-prem,All
+Language Translation,This APIs provide access to translate the text from one language to other language.,X,Language :: Translation,"Google, IBM Watson",,,X,X,,,GENERAL,,Cloud,All
+Key Phrase Detection,"Identifies the important phrases and their types, present in the input text along with that phrase relevance score. The salience score or the importance score of that phrase in the input text is also provided along with the Wikipedia ID.",X,Language :: Keyphrase Extraction,"AWS, Google, IBM Watson",,,X,X,X,,GENERAL,,Cloud,All
+Spell Check,This API lets you perform contextual grammar and spell checking in a given text.,X,Language :: Spell Checking,Azure,,X,,,,,GENERAL,,Cloud,All
+Text To Speech,Converts user input text to spoken audio.,X,Speech :: Text to Speech,Algorithmia,,,,,,X,GENERAL,,Cloud,All
+Speech To Text,Converts audio file into text. The file which is less than 1 minute use synchronous speech recognition.,X,Speech :: Speech to Text,Google,,,X,,,,GENERAL,,Cloud,All
+Car make and model recognition,"This algorithm will classify cars by their make, model, body style and model year from given images.",X,Vision :: Labeling,Algorithmia,,,,,,X,GENERAL,"Style :: Supervised, Function :: Deep Learning",Cloud,Commerce
+Color Identification,An image properties request returns the dominant colors in the image as RGB values and percent of the total pixel count.,,Vision :: Color Detection,"Google, Azure",,X,X,,,,ENGAGE,,,All
+Image Similarity,Compares two images for similarity score.,X,Vision,Algorithmia,,,,,,X,GENERAL,,Cloud,All
+Text Moderation,"Use content filtering to detect potential profanity in more than 100 languages, flag text that may be deemed inappropriate depending on context, and match text against your custom lists. Content Moderator also helps check for personally identifiable information (PII).",X,Language :: Understanding,Azure,,X,,,,,ENGAGE :: Personalized User Engagement,,Cloud,All
+Image Moderation,"Enhance your ability to detect potentially offensive or unwanted images through machine learning-based classifiers, custom lists, and optical character recognition (OCR).",X,Vision,,,,,,,,ENGAGE :: Personalized User Engagement,,Cloud,All
+Video Moderation,Enable machine-assisted detection of possible adult and racy content in videos.,X,Vision,,,,,,,,ENGAGE :: Personalized User Engagement,,Cloud,All
+Detect Places in Images,"Classifies places like amusement_arcade,apartment_building,outdoor,aquarium in an image.",X,Vision :: Labeling,Algorithmia,,,,,,X,GENERAL,,Cloud,All
+Detecting Landmarks in Images,Landmark requests detect well-known natural and human-made landmarks.,X,Vision :: Labeling,Google,,,X,,,,GENERAL,,Cloud,All
+Clothing Recognition,"This algorithm detects clothing items in images; it returns a list of discovered clothing articles as well as annotating the input image with bounding boxes for each found article. The list of article like t-shirt, jewellery, boots etc.",,Vision :: Segmentation,Algorithmia,,,,,,X,ENGAGE :: Personalized User Engagement,,Cloud,Commerce
+Face Detection,"Identifies all the faces that are present in an image, with confidence score for each face and recognizes Facial attributes including age, gender, smile intensity.",X,Vision :: Segmentation,"Azure, Google, IBM Watson",,X,X,X,,,GENERAL,,Cloud,All
+Image Captioning,This operation extracts a rich set of visual features based on the image content.,X,Vision :: Captioning,Azure,,X,,,,,GENERAL,,Cloud,All
+Image Crop Hints,Crop hints requests return the coordinates of a bounding box that surrounds the dominant object or face in an image.,X,Vision :: Segmentation,Google,,,X,,,,GENERAL,,Cloud,All
+Number Plate Recognition,Using neural networks to build an automatic number plate recognition system.,X,Vision :: Segmentation,Algorithmia,,,,,,X,GENERAL,,Cloud,All
+Object Identification,Detects the objects in an image.,X,Vision :: Segmentation,"AWS, IBM Watson",,,,X,X,,GENERAL,,Cloud,All
+Skin Color Detection,"Gets possible values of skin color for the detected people in a pictures, only one face should be in an image.",X,Vision :: Color Detection,Algorithmia,,,,,,X,GENERAL,,Cloud,All
+Image Search,Search the web for images.,X,Knowledge :: Search,Azure,,X,,,,,GENERAL,,Cloud,All
+Video Object Detection,Returns list of all the objects that are identified in the given input video.,X,Vision,Google,,,X,,,,GENERAL,,Cloud,All
+Video Scene Analysis,Detects the Scene Changes in a given video,X,Vision,Google,,,X,,,,GENERAL,,Cloud,All
+Hourly Weather Forecast,You can request an hourly weather forecast for the next 48 hours starting from the current time,X,,IBM Watson,,,,X,,,GENERAL,,Cloud,All
+News Insights,Quickly find insights in the News data collected in recent news articles. Explore a company details,X,,IBM Watson,,,,X,,,GENERAL,,Cloud,Financial Services
+Personality Insights,"Personality Insights derives insights from transactional and social media data to identify psychological traits which determine purchase decisions, intent and behavioral traits, utilized to improve conversion rates",X,Language :: Emotion,IBM Watson,,,,X,,,,,,All
+Product Affinity Analysis,A scalable method for finding frequent patterns within large datasets.,X,,Algorithmia,,,,,,X,ENGAGE :: Personalized User Engagement,,Cloud,Commerce
+Company Sentiment,Equity news sentiment for smarter investment decisions. News Sentiment is derived from millions of web sources.,X,Language :: Sentiment,Algorithmia,,,,,,X,AMPLIFY :: Risk & Opportunity Surveillance,,Cloud,Financial Services
+Suitable match,Finds a stable matching in which there is no pair of elements where both members prefer their partner in a different matching over their partner in the stable matching.,X,,Algotrithmia,,,,,,X,,,Cloud,
+Time series anomaly detection,"Anomaly detection algorithm best used for IoT, Fraud detection and IT Ops.",X,,Algotrithmia,,,,,,X,,,Cloud,All
+Time series deseasonalize,Removes seasonal components from a time series.,X,,Algorithmia,,,,,,X,,,Cloud,All
+Time series detrend,"Takes a time series dataset, fits a linear trend to the data, and returns the dataset with the linear trend subtracted out.",X,,Algorithmia,,,,,,X,,,Cloud,All
+Time series moving average,"Returns the Simple, Exponential and Cumulative Moving Averages of a time series. This can be used to smooth a time series.",X,,Algorithmia,,,,,,X,,,Cloud,All
+TIme series summary,"Time series summary takes time series data as an input and gives the summary statistics of the time series like Mean, Variance, Standard Deviation, min value, max value, slope, intercept value etc.., . These will be helpful in basic understanding of the time series that data that has been provided.",X,,Algorithmia,,,,,,X,,,Cloud,All
+News article extraction,Extract news article metadata and clean text from HTML.,,Language :: Text Cleansing,,,,,,,,AMPLIFY :: Risk & Opportunity Surveillance,,On-prem,All
+News article cleaning,Clean news article title and text to remove metadata that confuses NLP skills.,,Language :: Text Cleansing,,,,,,,,AMPLIFY :: Risk & Opportunity Surveillance,,On-prem,Financial Services
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+**coming soon,,,,,,,,,,,,,,

@@ -1,0 +1,20 @@
+{
+    "name": "company_sentiment",
+    "title": "Company Sentiment",
+    "description": "Equity news sentiment for smarter investment decisions. News Sentiment is derived from millions of web sources.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

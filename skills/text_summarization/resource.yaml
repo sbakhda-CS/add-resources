@@ -1,0 +1,20 @@
+{
+    "name": "text_summarization",
+    "title": "Text Summarization",
+    "description": "Provides a brief summary of the input text.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

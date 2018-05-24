@@ -1,0 +1,25 @@
+{
+    "name": "human_api",
+    "title": "Human API",
+    "description": "IoT integration for healthcare IoT devices",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Healthcare",
+            "value": "dataset.industry.healthcare"
+        }
+    ]
+}

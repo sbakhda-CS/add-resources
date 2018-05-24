@@ -1,0 +1,29 @@
+{
+    "name": "foursquare",
+    "title": "Foursquare",
+    "description": "This dataset includes check-in, tip and tag data of restaurant venues in NYC collected from Foursquare",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        },
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

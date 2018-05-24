@@ -1,0 +1,20 @@
+{
+    "name": "churn_prediction",
+    "title": "Churn Prediction",
+    "description": "Machine learning-based interventions to reduce abandonments",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

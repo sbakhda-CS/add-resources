@@ -1,0 +1,20 @@
+{
+    "name": "number_plate_recognition",
+    "title": "Number Plate Recognition",
+    "description": "Using neural networks to build an automatic number plate recognition system.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

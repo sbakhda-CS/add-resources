@@ -1,0 +1,20 @@
+{
+    "name": "text_parsing",
+    "title": "Text Parsing",
+    "description": "Provides access to natural language processing (NLP) tools that identify the structure of text",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}

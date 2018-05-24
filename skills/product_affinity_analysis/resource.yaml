@@ -1,0 +1,20 @@
+{
+    "name": "product_affinity_analysis",
+    "title": "Product Affinity Analysis",
+    "description": "A scalable method for finding frequent patterns within large datasets.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 45
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": []
+}
