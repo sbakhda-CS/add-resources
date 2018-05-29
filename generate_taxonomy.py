@@ -5,7 +5,7 @@
 import json
 
 txs = json.load(open('taxonomy.json', 'r')).get('taxonomies')
-fname = "taxonomy_shikhar.json"
+fname = "taxonomy.json"
 
 # Converting json dict to list(key-value tuples),
 # then sorting and converting back to json

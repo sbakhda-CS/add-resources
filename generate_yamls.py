@@ -53,6 +53,7 @@ def main(csvfile, taxonomyfile, resource, path):
             sheet.append(sheet_row)
     sheet.pop(0) # removing column headers
 
+    not_found = set()
 
     # creating the resource.yaml file
     for r in sheet:
@@ -62,10 +63,13 @@ def main(csvfile, taxonomyfile, resource, path):
         # Adding tags using the taxonomy list
         tags = []
         for l in r[3]:
-            # print(r[0],l.lower().replace(' ','_'), list(filter(lambda x: x[1].split('.')[-1] == l.lower().replace(' ','_'), txs)))
+            if l == '': continue
+            l = cleanup(l)
             tag = list(filter(lambda x: x[1].split('.')[0] == rss_type[0:-2] and
-                                        x[1].split('.')[-1] == l.lower().replace(' ','_'),
+                                        x[1].split('.')[-1] == l,
                             txs))
+
+            if tag == []: not_found.add(rss_type[:-1] + '.[PATH].' + l)
             for val in tag:
                 tags.append(dict({"label" : val[0], "value" : val[1]}))
         # print(tags)
@@ -103,6 +107,7 @@ def main(csvfile, taxonomyfile, resource, path):
             else:
                 yaml_name = "resource"+str(n)+".yaml"
 
+    return not_found
 
 def cleanup(s):
     if s == '': return s
@@ -147,19 +152,26 @@ def sheets_api(rss_type):
 path = '/'.join(os.path.realpath(__file__).split('/')[0:-1]) + '/'
 # path = '/Users/sbakhda/dev/c12e-agents-skills/agent-camel/'
 
+
+not_found = set()
+
 print('Generating agent yamls...')
 csvfile, taxonomyfile, resource, path = init("agents", path)
-main(csvfile, taxonomyfile, resource, path)
+not_found |= main(csvfile, taxonomyfile, resource, path)
 print('Done\n')
 
 
 print('Generating dataset yamls...')
 csvfile, taxonomyfile, resource, path = init("datasets", path)
-main(csvfile, taxonomyfile, resource, path)
+not_found |= main(csvfile, taxonomyfile, resource, path)
 print('Done\n')
 
 print('Generating skill yamls...')
 csvfile, taxonomyfile, resource, path = init("skills", path)
-main(csvfile, taxonomyfile, resource, path)
+not_found |= main(csvfile, taxonomyfile, resource, path)
 print('Done')
+
+print('\n'+str(len(not_found))+' resource tags were not found in taxonomies:')
+for k in not_found:
+    print(k)
 
