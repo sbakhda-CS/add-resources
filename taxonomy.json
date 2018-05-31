@@ -124,18 +124,6 @@
         "value": "Financial Services"
 },
 {
-        "key": "agent.industry.financial_services.commerce",
-        "value": "Commerce"
-},
-{
-        "key": "agent.industry.financial_services.healthcare",
-        "value": "Healthcare"
-},
-{
-        "key": "agent.industry.financial_services.insurance",
-        "value": "Insurance"
-},
-{
         "key": "agent.industry.financial_services.investment_banking",
         "value": "Investment Banking"
 },
@@ -165,7 +153,7 @@
 },
 {
         "key": "agent.industry.financial_services.wealth_mgmt",
-        "value": "Wealth Mgmt"
+        "value": "Wealth Management"
 },
 {
         "key": "agent.industry.financial_services.wealth_mgmt.account_mgmt",
@@ -240,6 +228,14 @@
         "value": "Text Parsing with Learning"
 },
 {
+        "key": "agent.service_providers",
+        "value": "Service providers"
+},
+{
+        "key": "agent.service_providers.cognitive_scale",
+        "value": "CognitiveScale"
+},
+{
         "key": "agent.solution_patterns",
         "value": "Solution Patterns"
 },
@@ -252,7 +248,7 @@
         "value": "Intelligent Process Automation"
 },
 {
-        "key": "agent.solution_patterns.amplify.risk_and_opportunitysurveillance",
+        "key": "agent.solution_patterns.amplify.risk_and_opportunity_surveillance",
         "value": "Risk and Opportunity Surveillance"
 },
 {
@@ -366,6 +362,14 @@
 {
         "key": "dataset.price.paid",
         "value": "Paid"
+},
+{
+        "key": "dataset.service_providers",
+        "value": "Service providers"
+},
+{
+        "key": "dataset.service_providers.cognitive_scale",
+        "value": "CognitiveScale"
 },
 {
         "key": "skill.cognitive_function",
@@ -726,6 +730,10 @@
 {
         "key": "skill.service_providers.azure",
         "value": "Azure"
+},
+{
+        "key": "skill.service_providers.cognitive_scale",
+        "value": "CognitiveScale"
 },
 {
         "key": "skill.service_providers.google",

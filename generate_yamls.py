@@ -2,29 +2,29 @@ from __future__ import print_function
 from apiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
-import csv, json, os, shutil
+import csv, json, os, shutil, random, yaml, subprocess, glob, io
+import generate_taxonomy
+
 
 def init(rss_type, path):
 
-    if rss_type == "datasets":
-        rss_type, titl_col, desc_col, tag_col = "datasets/",  0, 1, [4,6]
-        csvfile = 'Master- Marketplace Accelerators - Datasets.csv'
-    elif rss_type == "skills":
-        rss_type, titl_col, desc_col, tag_col = "skills/",  0, 1, [11]
-        csvfile = 'Master- Marketplace Accelerators - Skills.csv'
-    elif rss_type == "agents":
-        rss_type, titl_col, desc_col, tag_col = "agents/",  0, 1, [2,3]
-        csvfile = 'Master- Marketplace Accelerators - Agents.csv'
+    if rss_type == "dataset":
+        rss_type, titl_col, desc_col, tag_col = "dataset",  0, 1, [4,6]
+    elif rss_type == "skill":
+        rss_type, titl_col, desc_col, tag_col = "skill",  0, 1, [11]
+    elif rss_type == "agent":
+        rss_type, titl_col, desc_col, tag_col = "agent",  0, 1, [2,3]
+    else:
+        rss_type, titl_col, desc_col, tag_col = None, 0, 1, 2
 
-    taxonomyfile = 'taxonomy.json'
+    # creating an empty resource folder if it doesn't exist
+    if not os.path.exists(path + rss_type + '-camel/' + rss_type + 's/'):
+        os.makedirs(path + rss_type + '-camel/' + rss_type + 's/')
 
-    # creating an empty resource folder
-    if os.path.exists(path + rss_type): shutil.rmtree(path + rss_type)
-    else: os.makedirs(path + rss_type)
+    return (rss_type, titl_col, desc_col, tag_col), path
 
-    return csvfile, taxonomyfile, (rss_type, titl_col, desc_col, tag_col), path
 
-def main(csvfile, taxonomyfile, resource, path):
+def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
 
     rss_type, titl_col, desc_col, tag_col = resource
 
@@ -33,12 +33,17 @@ def main(csvfile, taxonomyfile, resource, path):
     for pair in range(0, len(txs)):
         txs[pair] = (txs[pair].get('value'), txs[pair].get('key'))
 
+    # Sheet Structure
+    # r[0] = name
+    # r[1] = human title
+    # r[2] = description
+    # r[3] = tag label array
 
-    # Creating data array from the csv sheet
+    # Creating data array from the google sheet
     sheet = []
-    # sheet_reader = csv.reader(open(csvfile, 'r'), delimiter=',', quotechar='"')
-    sheet_values = sheets_api(rss_type)
-    for row in sheet_values:
+    sheet_raw = sheets_api(rss_type)
+    if sheet_raw == []: return set()
+    for row in sheet_raw:
         sheet_row = ['','','', []]
         for col in range(0, len(row)):
             if col == titl_col:
@@ -54,60 +59,106 @@ def main(csvfile, taxonomyfile, resource, path):
     sheet.pop(0) # removing column headers
 
     not_found = set()
+    many_found = set()
 
     # creating the resource.yaml file
-    for r in sheet:
+    for rss in sheet:
 
-        rss_name = r[0] + '/'
+        rss_name = rss[0]
+        rss_title = rss[1]
+        rss_desc = rss[2]
+        rss_tags = rss[3]
 
-        # Adding tags using the taxonomy list
-        tags = []
-        for l in r[3]:
-            if l == '': continue
-            l = cleanup(l)
-            tag = list(filter(lambda x: x[1].split('.')[0] == rss_type[0:-2] and
-                                        x[1].split('.')[-1] == l,
-                            txs))
-
-            if tag == []: not_found.add(rss_type[:-1] + '.[PATH].' + l)
-            for val in tag:
-                tags.append(dict({"label" : val[0], "value" : val[1]}))
-        # print(tags)
         # creating a folder for each resource
-        if not os.path.exists(path + rss_type + rss_name): os.makedirs(path + rss_type + rss_name)
+        if not os.path.exists(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/'):
+            os.makedirs(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/')
+
+        # add tags from skill.yaml
+        if os.path.exists(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' +  'skill.yaml'):
+            yaml_json = yaml.load(open(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' +  'skill.yaml', 'r'))
+            if yaml_json is not None:
+                t = yaml_json.get('tags') or None
+                if t is not None and not(t in rss_tags):
+                    rss_tags += t
+
+        # adding cognitivescale tag
+        rss_tags.append(dict({"label" : "CognitiveScale", "value" : rss_type + ".service_providers.cognitive_scale"}))
+
+        # get tag key-value from taxonomy.json
+        tags = []
+        for label in rss_tags:
+
+            if isinstance(label, str):
+                if label == '': continue
+                label = cleanup(label)
+                query_results = list(filter(lambda x: x[1].split('.')[0] == rss_type and
+                                            x[1].split('.')[-1] == label,
+                                txs))
+                if query_results == []: not_found.add(rss_type + '.[PATH].' + label)
+                elif len(query_results) > 1: many_found.add((rss_type + '.[PATH].' + label, query_results))
+                else:
+                    tags.append(dict({"label" : query_results[0][0], "value" : query_results[0][1]}))
+            if isinstance(label, dict):
+                query_results = list(filter(lambda x: x[0] == label.get('label') and
+                                                      x[1] == label.get('value'),
+                                            txs))
+                if query_results == []:
+                    not_found.add(label.get('value')+' - '+label.get('label') + ' in ' + rss_name)
+                elif len(query_results) > 1:
+                    many_found.add((label.get('value'), query_results))
+                else:
+                    tags.append(dict({"label": query_results[0][0], "value": query_results[0][1]}))
+
+        # remove duplicates
+        tags_set = []
+        for t in tags:
+            if t not in tags_set: tags_set.append(t)
+        tags_set.sort(key=lambda x : x["value"])
+        rss_tags = tags_set
 
         # adding the resource.yaml file
         resource_yaml = {
-            "name": r[0],
-            "title": r[1],
-            "description": r[2],
+            "name": ('cortex/' + rss_name),
+            "title": rss_title,
+            "description": rss_desc,
             "type": {
-                "name": rss_type[0:-2]
+                "name": rss_type
             }, "icon": "http://icon.png",
             "price": {
                 "unit": "CCU",
-                "value": 45
+                "value": random.randint(50,100)
             }, "tutorials": [
                 {
                     "description": "Tutorial Description",
                     "videoLink": "http://video.avi"
                 }
             ],
-            "tags": tags
+            "tags": rss_tags
         }
 
-        yaml_name = "resource.yaml"
-        n = 0
-        while True:
-            n += 1
-            if not os.path.isfile(path + rss_type  + rss_name + yaml_name):
-                file = open(path + rss_type + rss_name + yaml_name, 'w')
-                json.dump(resource_yaml, file, indent=4)
-                break
-            else:
-                yaml_name = "resource"+str(n)+".yaml"
+        # overwrite resource.yaml
+        if CHANGE_RSS_YAML == "resource":
+            file = open(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' + "resource.yaml", 'w')
+            json.dump(resource_yaml, file, indent=4)
 
-    return not_found
+        # adding merged tags to skills.yaml
+        if CHANGE_SKILL_YAML == 'skill':
+            if os.path.exists(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' +  'skill.yaml'):
+                skyaml = open(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' +  'skill.yaml', 'r').read()
+                try:
+                    tag_index = skyaml.index('tags:\n')
+                except ValueError:
+                    continue
+                yaml_json = yaml.load(skyaml[tag_index:])
+                yaml_json['tags'] = rss_tags
+                yamldump = io.StringIO("")
+                yaml.dump(yaml_json, yamldump, default_flow_style=False)
+                skyaml = skyaml[:tag_index] + yamldump.getvalue()
+                final_write = open(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' +  'skill.yaml', 'w')
+                final_write.write(skyaml)
+                yamldump.close()
+
+    return not_found, many_found
 
 def cleanup(s):
     if s == '': return s
@@ -119,9 +170,11 @@ def cleanup(s):
     s = s.replace("(", " ")
     s = s.replace(")", " ")
     s = s.replace(":", "")
+    s = s.replace("*","")
     s = s.replace(" ", "_")
     s = s.replace("__", "_")
     s = s.replace("__", "_")
+    s = s.replace("/", "_")
     s = s.replace(chr(8217) + 's', "")
     s = s.replace(chr(8217), "")
     if s[-1] == '_':
@@ -134,44 +187,65 @@ def cleanup(s):
 def sheets_api(rss_type):
     # Setup the Sheets API
     SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
-    store = file.Storage('credentials.json')
+    store = file.Storage('jsons/credentials.json')
     creds = store.get()
     if not creds or creds.invalid:
-        flow = client.flow_from_clientsecrets('client_secret.json', SCOPES)
+        flow = client.flow_from_clientsecrets('jsons/client_secret_tags.json', SCOPES)
         creds = tools.run_flow(flow, store)
     service = build('sheets', 'v4', http=creds.authorize(Http()))
 
+    print('Fetching from Google Sheet...')
+
     # Call the Sheets API
-    SPREADSHEET_ID = '1K5OsO_yhttXHRtuWT83grwVZaC-6GOm6VzRNk3cegnA'
-    RANGE_NAME = rss_type[0:-1] + '!A:Z'
+    # SPREADSHEET_ID = '1K5OsO_yhttXHRtuWT83grwVZaC-6GOm6VzRNk3cegnA' # prod
+    SPREADSHEET_ID = '1EsH5FPmODz2oYPQ4weI_Owfa8bDxdQYh3cKEQrNPPUw' # dev
+    RANGE_NAME = rss_type +'s-dev' + '!A:Z'
     result = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID,
                                                  range=RANGE_NAME).execute()
     sheet_values = result.get('values', [])
     return sheet_values
 
-path = '/'.join(os.path.realpath(__file__).split('/')[0:-1]) + '/'
-# path = '/Users/sbakhda/dev/c12e-agents-skills/agent-camel/'
 
 
-not_found = set()
+def knock_em():
+    path = '/Users/sbakhda/dev/c12e-agents-skills/'
+    # path = '/'.join(os.path.realpath(__file__).split('/')[0:-1]) + '/'
 
-print('Generating agent yamls...')
-csvfile, taxonomyfile, resource, path = init("agents", path)
-not_found |= main(csvfile, taxonomyfile, resource, path)
-print('Done\n')
+    taxonomyfile = 'taxonomy.json'
+
+    CHANGE_RSS_YAML = input("Do you want to modify RESOURCE.yamls? Confirm with resource:\t")
+
+    # sorting taxonomy.json
+    generate_taxonomy.sort_json(taxonomyfile)
+
+    if CHANGE_RSS_YAML == 'resource':
+        try:
+            subprocess.Popen("find "+path+" -name 'resource*.yaml' -delete")
+        except: pass
 
 
-print('Generating dataset yamls...')
-csvfile, taxonomyfile, resource, path = init("datasets", path)
-not_found |= main(csvfile, taxonomyfile, resource, path)
-print('Done\n')
+    rss_type = 'agent'
 
-print('Generating skill yamls...')
-csvfile, taxonomyfile, resource, path = init("skills", path)
-not_found |= main(csvfile, taxonomyfile, resource, path)
-print('Done')
+    if rss_type == 'skill':
+        CHANGE_SKILL_YAML = input("Do you want to modify SKILL.yamls? Confirm with skill:\t")
+    else:
+        CHANGE_SKILL_YAML = None
 
-print('\n'+str(len(not_found))+' resource tags were not found in taxonomies:')
-for k in not_found:
-    print(k)
 
+    print('Generating ' + rss_type + ' resource.yamls...')
+    resource, path = init(rss_type, path)
+    not_found, many_found = set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML)
+    print('Done\n')
+
+
+    print('\n'+str(len(not_found))+' '+rss_type+' resource tags were not found in taxonomies:\n')
+    for k in sorted(list(not_found)):
+        print(k)
+
+    print('\n'+str(len(many_found))+' '+rss_type+'  resource tags had multiple tags in taxonomies:\n')
+    for k in sorted(list(many_found)):
+        print(k[0])
+        for q in k[1]:
+            print('\t'+str(q))
+
+knock_em()

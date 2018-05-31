@@ -1,0 +1,37 @@
+{
+    "name": "detect_text_similarity",
+    "title": "Detect Text Similarity",
+    "description": "This algorithm will compare documents (can be any kind of document) and report which documents are the most similar.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 82
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Language",
+            "value": "skill.cognitive_function.language"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "Machine Learning Style",
+            "value": "skill.machine_learning_style"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

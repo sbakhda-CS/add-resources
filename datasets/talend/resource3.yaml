@@ -1,0 +1,33 @@
+{
+    "name": "talend",
+    "title": "Talend",
+    "description": "Data Integration and Connector tools including big data integration",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 77
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Commerce",
+            "value": "dataset.industry.commerce"
+        },
+        {
+            "label": "Healthcare",
+            "value": "dataset.industry.healthcare"
+        },
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        }
+    ]
+}

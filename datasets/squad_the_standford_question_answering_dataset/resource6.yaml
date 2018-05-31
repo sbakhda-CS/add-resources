@@ -1,0 +1,25 @@
+{
+    "name": "squad_the_standford_question_answering_dataset",
+    "title": "SQuAD - The Standford Question Answering Dataset",
+    "description": "500+ articles",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 67
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

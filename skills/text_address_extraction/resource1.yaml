@@ -1,0 +1,33 @@
+{
+    "name": "text_address_extraction",
+    "title": "Text Address Extraction",
+    "description": "Identifies the contact information from the given text input like the company name, city, country, phone number, street name.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 90
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Tagging",
+            "value": "skill.learning-algorithm.tagging"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "language_detection",
+    "title": "Language Detection",
+    "description": "Detect the natural language of the supplied text.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 64
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

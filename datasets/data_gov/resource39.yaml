@@ -1,0 +1,29 @@
+{
+    "name": "data_gov",
+    "title": "Data.gov",
+    "description": "U.S Govt's open datasets to build apps that help consumers make smarter choices.",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 60
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Commerce",
+            "value": "dataset.industry.commerce"
+        },
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

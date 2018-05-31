@@ -1,0 +1,41 @@
+{
+    "name": "text_to_speech",
+    "title": "Text to Speech",
+    "description": "Converts user input text to spoken audio format.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 78
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning.type.deep_learning"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning_style.deep_learning"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "Speech",
+            "value": "skill.cognitive_function.speech"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "name": "nlu_key_entity_recognition",
+    "title": "NLU Key Entity Recognition",
+    "description": "Identifies the important phrases and their types, present in the input text along with that phrase relevance score. The salience score or the importance score of that phrase in the input text is also provided along with the Wikipedia ID.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 86
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "AWS",
+            "value": "skill.service_providers.aws"
+        },
+        {
+            "label": "Language",
+            "value": "skill.cognitive_function.language"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "Google",
+            "value": "skill.service_providers.google"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "name": "time_series_detrend",
+    "title": "Time Series Detrend",
+    "description": "Fits a linear trend to the time series data, and returns the dataset with the linear trend subtracted out.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 60
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Feature Optimization",
+            "value": "skill.learning-algorithm.feature_optimization"
+        },
+        {
+            "label": "Feature Optimization",
+            "value": "skill.machine_learning.function.feature_optimization"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

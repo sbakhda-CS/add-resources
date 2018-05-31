@@ -1,0 +1,33 @@
+{
+    "name": "invoice_match_exception",
+    "title": "Invoice Match Exception",
+    "description": "Predict the confidence of an ME code to be added to a rejected invoice based on historical data",
+    "type": {
+        "name": "agent"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 80
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Healthcare",
+            "value": "agent.industry.financial_services.healthcare"
+        },
+        {
+            "label": "Healthcare",
+            "value": "agent.industry.healthcare"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "agent.service_provider"
+        }
+    ]
+}

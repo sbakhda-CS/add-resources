@@ -1,0 +1,49 @@
+{
+    "name": "optical_character_recognition_ocr",
+    "title": "Optical Character Recognition (OCR)",
+    "description": "This API Can be used to detect text in an image. This Extracts recognized characters into a machine-usable character stream.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 51
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "AWS",
+            "value": "skill.service_providers.aws"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning.type.deep_learning"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning_style.deep_learning"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "Vision",
+            "value": "skill.cognitive_function.vision"
+        },
+        {
+            "label": "Google",
+            "value": "skill.service_providers.google"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

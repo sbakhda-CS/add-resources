@@ -1,0 +1,41 @@
+{
+    "name": "detect_residential_properties",
+    "title": "Detect Residential Properties",
+    "description": "Detect residential properties is an image classifier specifically built for Real Estate applications that classifies places like bathroom,bedroom,brick_house,colonial_house in an image.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 86
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning.type.deep_learning"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning_style.deep_learning"
+        },
+        {
+            "label": "Vision",
+            "value": "skill.cognitive_function.vision"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "optical_character_recognition",
+    "title": "Optical Character Recognition**",
+    "description": "Optical character recognition from an image with a bounding box with coordinates",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 58
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

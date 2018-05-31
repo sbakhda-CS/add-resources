@@ -1,0 +1,25 @@
+{
+    "name": "uber_2b_trip_data",
+    "title": "Uber 2B trip data",
+    "description": "Uber's traffic data gathered from the more than 500 cities in which it operates in the hopes it can be used to improve urban traffic on the world's busiest streets.",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 80
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

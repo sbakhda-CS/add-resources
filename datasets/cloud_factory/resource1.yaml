@@ -1,0 +1,37 @@
+{
+    "name": "cloud_factory",
+    "title": "Cloud Factory",
+    "description": "Data labeling and tagging services for machine learning",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 76
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        },
+        {
+            "label": "Healthcare",
+            "value": "dataset.industry.healthcare"
+        },
+        {
+            "label": "Commerce",
+            "value": "dataset.industry.commerce"
+        },
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

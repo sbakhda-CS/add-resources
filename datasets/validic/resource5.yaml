@@ -1,0 +1,25 @@
+{
+    "name": "validic",
+    "title": "Validic",
+    "description": "Provides healthcare companies one mobile health API connection to access data from the best mHealth apps and devices.",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 50
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Healthcare",
+            "value": "dataset.industry.healthcare"
+        }
+    ]
+}

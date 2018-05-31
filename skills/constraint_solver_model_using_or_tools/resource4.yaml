@@ -1,0 +1,25 @@
+{
+    "name": "constraint_solver_model_using_or_tools",
+    "title": "Constraint Solver Model using OR Tools",
+    "description": "Provide optimal appointment recommendations to schedulers based on patient preferences and defined parameters",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 89
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

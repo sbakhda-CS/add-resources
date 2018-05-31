@@ -8,7 +8,7 @@
     "icon": "http://icon.png",
     "price": {
         "unit": "CCU",
-        "value": 45
+        "value": 58
     },
     "tutorials": [
         {
@@ -18,16 +18,16 @@
     ],
     "tags": [
         {
-            "label": "Financial Services",
-            "value": "dataset.industry.financial_services"
-        },
-        {
             "label": "Healthcare",
             "value": "dataset.industry.healthcare"
         },
         {
             "label": "General",
             "value": "dataset.industry.general"
+        },
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
         },
         {
             "label": "Commerce",

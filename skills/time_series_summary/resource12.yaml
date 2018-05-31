@@ -1,0 +1,37 @@
+{
+    "name": "time_series_summary",
+    "title": "Time Series Summary",
+    "description": "Returns the summary statistics of the time series like Mean, Variance, Standard Deviation, min Value, max Value, Slope, Intercept value etc..,.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 50
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Feature Optimization",
+            "value": "skill.learning-algorithm.feature_optimization"
+        },
+        {
+            "label": "Feature Optimization",
+            "value": "skill.machine_learning.function.feature_optimization"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

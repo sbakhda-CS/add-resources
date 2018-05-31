@@ -1,0 +1,25 @@
+{
+    "name": "face_detection",
+    "title": "Face Detection",
+    "description": "Identifies all the faces that are present in an image, with confidence score for each face and recognizes Facial attributes including age, gender, smile intensity.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 67
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

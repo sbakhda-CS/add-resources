@@ -1,0 +1,25 @@
+{
+    "name": "data_gov",
+    "title": "Data.gov",
+    "description": "U.S Govt's open datasets powering a new civic movement that is changing the way citizens experience our nation\u2019s cities, counties, and states.",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 99
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

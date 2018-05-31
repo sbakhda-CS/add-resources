@@ -1,0 +1,45 @@
+{
+    "name": "number_plate_recognition",
+    "title": "Number Plate Recognition",
+    "description": "This skill use neural networks to build an automatic number plate recognition system.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 82
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "Supervised Learning",
+            "value": "skill.machine_learning_style.supervised_learning"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning.type.deep_learning"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning_style.deep_learning"
+        },
+        {
+            "label": "Vision",
+            "value": "skill.cognitive_function.vision"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

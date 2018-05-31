@@ -1,0 +1,49 @@
+{
+    "name": "detecting_logos",
+    "title": "Detecting Logos",
+    "description": "Logo detection detects popular product and corporate logos within an image.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 75
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "Supervised Learning",
+            "value": "skill.machine_learning_style.supervised_learning"
+        },
+        {
+            "label": "Google",
+            "value": "skill.service_providers.google"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning.type.deep_learning"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning_style.deep_learning"
+        },
+        {
+            "label": "Vision",
+            "value": "skill.cognitive_function.vision"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

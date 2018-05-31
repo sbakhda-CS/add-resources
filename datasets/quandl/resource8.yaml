@@ -1,0 +1,25 @@
+{
+    "name": "quandl",
+    "title": "Quandl",
+    "description": "Cloud based Financial Services data catalog",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 83
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Commerce",
+            "value": "dataset.industry.commerce"
+        }
+    ]
+}

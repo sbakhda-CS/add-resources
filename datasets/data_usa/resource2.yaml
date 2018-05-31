@@ -1,0 +1,25 @@
+{
+    "name": "data_usa",
+    "title": "Data USA",
+    "description": "At its core, the Data USA API allows users to show data across various levels of detail, called sumlevels. There are four core categories of data: geographies, occupations, industries and educational studies. This page illustrates an example usage of exploring geographic data. Full documentation for the Data USA API is available on the Github repository wiki.",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 68
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

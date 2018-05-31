@@ -1,0 +1,37 @@
+{
+    "name": "language_understand",
+    "title": "Language Understand",
+    "description": "Identify the important parts in the given input text and summarizes the content by returning the key terms.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 75
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Entity Resolution",
+            "value": "skill.cognitive_function.entity_resolution"
+        },
+        {
+            "label": "AWS",
+            "value": "skill.service_providers.aws"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

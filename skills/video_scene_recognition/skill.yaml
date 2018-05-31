@@ -1,0 +1,63 @@
+camel: 1.0.0
+name: cortex/time_series_detrend
+title: Time Series Detrend
+description: Fits a linear trend to the time series data, and returns the dataset with the linear trend subtracted out.
+
+properties:
+  -
+    name: model
+    title: Model
+    description: This algorithm removes the trend from the given time series.
+    required: true
+    type: Enum
+    defaultValue: Algorithmia
+    validValues:
+      - Algorithmia
+  - 
+    name: api_key_algorithmia
+    title: Algorithmia API Key
+    description: Algorithmia API Key
+    required: true
+    type: String
+    defaultValue: ""
+    qualifiedBy: model=Algorithmia
+    
+inputs:
+  - name: payload
+    title: Time Series Input
+    parameters:
+      - name: time_series
+        type: array
+        description: Time series array
+        required: true
+    routing:
+      property: model
+      default:
+        action: cortex/time_series_detrend_algorithmia
+        runtime: cortex/functions
+        output: response
+      rules:
+        -
+          match: Algorithmia
+          action: cortex/time_series_detrend_algorithmia
+          runtime: cortex/functions
+          output: response
+          
+outputs:
+  - name: response
+    title: Time Series Detrended Response
+    parameters:
+      - name: detrended_series
+        title: Detrended Series
+        type: array
+
+tags:
+  -
+    label: Cloud
+    value: skill.deployment.cloud
+  -
+    label: Feature Optimization
+    value: skill.learning-algorithm.feature_optimization
+  -
+    label: Algorithmia
+    value: skill.service_providers.algorithmia

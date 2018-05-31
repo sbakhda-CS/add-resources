@@ -1,0 +1,53 @@
+{
+    "name": "face_detection",
+    "title": "Face Detection",
+    "description": "Identifies all the faces that are present in an image, with confidence score for each face and recognizes Facial attributes including age, gender, smile intensity.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 61
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "Azure",
+            "value": "skill.service_providers.azure"
+        },
+        {
+            "label": "Google",
+            "value": "skill.service_providers.google"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning.type.deep_learning"
+        },
+        {
+            "label": "Deep Learning",
+            "value": "skill.machine_learning_style.deep_learning"
+        },
+        {
+            "label": "IBM Watson",
+            "value": "skill.service_providers.ibm"
+        },
+        {
+            "label": "Vision",
+            "value": "skill.cognitive_function.vision"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "application_usage_feedback",
+    "title": "Application usage feedback",
+    "description": "This skill interprets user behavior through application usage as feedback for training.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 75
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

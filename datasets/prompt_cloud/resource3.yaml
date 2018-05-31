@@ -1,0 +1,37 @@
+{
+    "name": "prompt_cloud",
+    "title": "Prompt Cloud",
+    "description": "Data crawling services for the enterprise",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 59
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Healthcare",
+            "value": "dataset.industry.healthcare"
+        },
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        },
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        },
+        {
+            "label": "Commerce",
+            "value": "dataset.industry.commerce"
+        }
+    ]
+}

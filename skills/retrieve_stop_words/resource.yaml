@@ -1,0 +1,29 @@
+{
+    "name": "retrieve_stop_words",
+    "title": "Retrieve Stop Words",
+    "description": "Returns a list of common stop words. Based on Mallet's list of stop words and http://www.ranks.nl/stopwords.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 95
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

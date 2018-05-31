@@ -1,0 +1,25 @@
+{
+    "name": "time_series_detrend",
+    "title": "Time series detrend",
+    "description": "Takes a time series dataset, fits a linear trend to the data, and returns the dataset with the linear trend subtracted out.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 96
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

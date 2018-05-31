@@ -1,0 +1,25 @@
+{
+    "name": "data_world",
+    "title": "data.world",
+    "description": "",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 70
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

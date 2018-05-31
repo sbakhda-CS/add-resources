@@ -8,7 +8,7 @@
     "icon": "http://icon.png",
     "price": {
         "unit": "CCU",
-        "value": 45
+        "value": 68
     },
     "tutorials": [
         {
@@ -20,6 +20,10 @@
         {
             "label": "Financial Services",
             "value": "agent.industry.financial_services"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "agent.service_provider"
         }
     ]
 }

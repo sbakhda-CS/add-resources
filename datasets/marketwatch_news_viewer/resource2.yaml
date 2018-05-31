@@ -1,0 +1,25 @@
+{
+    "name": "marketwatch_news_viewer",
+    "title": "MarketWatch News Viewer",
+    "description": "Financial and Investment datasets",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 85
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "text_moderation",
+    "title": "Text Moderation",
+    "description": "Use content filtering to detect potential profanity in more than 100 languages, flag text that may be deemed inappropriate depending on context, and match text against your custom lists. Content Moderator also helps check for personally identifiable information (PII).",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 84
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

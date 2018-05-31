@@ -1,0 +1,37 @@
+{
+    "name": "databaseusa",
+    "title": "DatabaseUSA",
+    "description": "Consumer/Marketing data",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 57
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Healthcare",
+            "value": "dataset.industry.healthcare"
+        },
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        },
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        },
+        {
+            "label": "Commerce",
+            "value": "dataset.industry.commerce"
+        }
+    ]
+}

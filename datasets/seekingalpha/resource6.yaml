@@ -1,0 +1,25 @@
+{
+    "name": "seekingalpha",
+    "title": "SeekingAlpha",
+    "description": "Access to Stock market Insights & financial analysis, including free earnings call transcripts, investment ideas and ETF & stock research written by finance experts",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 52
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        }
+    ]
+}

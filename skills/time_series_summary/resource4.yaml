@@ -1,0 +1,25 @@
+{
+    "name": "time_series_summary",
+    "title": "TIme series summary",
+    "description": "Time series summary takes time series data as an input and gives the summary statistics of the time series like Mean, Variance, Standard Deviation, min value, max value, slope, intercept value etc.., . These will be helpful in basic understanding of the time series that data that has been provided.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 81
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

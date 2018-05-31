@@ -1,0 +1,25 @@
+{
+    "name": "data_gov",
+    "title": "Data.gov",
+    "description": "U.S Govt's open datasets on key energy topics like alternative fuels, green buildings, efficiency, and managing energy in your own home.",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 57
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

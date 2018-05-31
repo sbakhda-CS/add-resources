@@ -1,0 +1,25 @@
+{
+    "name": "i2b2",
+    "title": "i2b2",
+    "description": "Datasets for existing clinical information to yield insights that can directly impact healthcare improvement",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 74
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        }
+    ]
+}

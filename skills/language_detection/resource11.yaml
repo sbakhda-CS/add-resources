@@ -1,0 +1,41 @@
+{
+    "name": "language_detection",
+    "title": "Language Detection",
+    "description": "Text Analytics API is a cloud-based service that provides language detection as a main functionality.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 100
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "AWS",
+            "value": "skill.service_providers.aws"
+        },
+        {
+            "label": "Language",
+            "value": "skill.cognitive_function.language"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "Google",
+            "value": "skill.service_providers.google"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

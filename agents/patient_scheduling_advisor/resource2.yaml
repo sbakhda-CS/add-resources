@@ -1,0 +1,33 @@
+{
+    "name": "patient_scheduling_advisor",
+    "title": "Patient Scheduling Advisor",
+    "description": "Assist Schedulers to get information on patient orders and resource availability based on real-time data from EMR APIs. Provide optimal appointment recommendations to schedulers based on patient preferences",
+    "type": {
+        "name": "agent"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 76
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Healthcare",
+            "value": "agent.industry.financial_services.healthcare"
+        },
+        {
+            "label": "Healthcare",
+            "value": "agent.industry.healthcare"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "agent.service_provider"
+        }
+    ]
+}

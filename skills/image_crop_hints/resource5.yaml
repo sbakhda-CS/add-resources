@@ -1,0 +1,25 @@
+{
+    "name": "image_crop_hints",
+    "title": "Image Crop Hints",
+    "description": "Crop hints requests return the coordinates of a bounding box that surrounds the dominant object or face in an image.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 55
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

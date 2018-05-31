@@ -1,0 +1,25 @@
+{
+    "name": "redox",
+    "title": "Redox",
+    "description": "Healthcare data integration with EMR and PMS",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 72
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Healthcare",
+            "value": "dataset.industry.healthcare"
+        }
+    ]
+}

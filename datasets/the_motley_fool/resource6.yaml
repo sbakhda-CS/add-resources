@@ -1,0 +1,25 @@
+{
+    "name": "the_motley_fool",
+    "title": "The Motley Fool",
+    "description": "Provides datasets related to financial advice for investors through various stock, investing, and personal finance services",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 100
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        }
+    ]
+}

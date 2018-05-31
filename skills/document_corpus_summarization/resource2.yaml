@@ -1,0 +1,25 @@
+{
+    "name": "document_corpus_summarization",
+    "title": "Document Corpus Summarization**",
+    "description": "Efficiently going through a large set of documents and summarize the content for the users",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 100
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

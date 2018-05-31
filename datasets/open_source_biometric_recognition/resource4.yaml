@@ -1,0 +1,25 @@
+{
+    "name": "open_source_biometric_recognition",
+    "title": "Open Source Biometric Recognition",
+    "description": "A communal biometrics framework supporting the development of open algorithms and reproducible evaluations",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 61
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

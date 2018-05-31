@@ -1,0 +1,25 @@
+{
+    "name": "reuters_news_dataset",
+    "title": "Reuters News dataset",
+    "description": "(Older) purely classification-based dataset with text from the newswire. Commonly used in tutorial",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 100
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

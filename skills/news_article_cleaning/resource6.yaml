@@ -1,0 +1,25 @@
+{
+    "name": "news_article_cleaning",
+    "title": "News article cleaning",
+    "description": "Clean news article title and text to remove metadata that confuses NLP skills.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 99
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

@@ -8,7 +8,7 @@
     "icon": "http://icon.png",
     "price": {
         "unit": "CCU",
-        "value": 45
+        "value": 59
     },
     "tutorials": [
         {
@@ -16,5 +16,10 @@
             "videoLink": "http://video.avi"
         }
     ],
-    "tags": []
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
 }

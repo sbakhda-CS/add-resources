@@ -1,0 +1,25 @@
+{
+    "name": "open_data_monitor",
+    "title": "Open Data Monitor",
+    "description": "Of 160456 datasets, 100346 are available/accessable, 61200 are Machine readable and only 89883 datsets have metadata",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 64
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

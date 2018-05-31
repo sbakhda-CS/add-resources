@@ -1,0 +1,25 @@
+{
+    "name": "joe's_house",
+    "title": "Joe's House",
+    "description": "Dataset lists thousands of places to stay across the country near hospitals and treatments centers that offer a discount for traveling patients and their loved ones",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 85
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "imagenet",
+    "title": "ImageNet",
+    "description": "The de-facto image dataset for new algorithms. Many image API companies have labels from their REST interfaces that are suspiciously close to the 1000 category; WordNet; hierarchy from ImageNet.",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 96
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

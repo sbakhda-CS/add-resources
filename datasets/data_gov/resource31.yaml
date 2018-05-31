@@ -1,0 +1,25 @@
+{
+    "name": "data_gov",
+    "title": "Data.gov",
+    "description": "U.S Govt's open datasets related to new technologies, facilities, and research",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 95
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "General",
+            "value": "dataset.industry.general"
+        }
+    ]
+}

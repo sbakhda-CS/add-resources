@@ -1,0 +1,33 @@
+{
+    "name": "symphony",
+    "title": "Symphony",
+    "description": "Financial services platform used for communication and collaboration securely",
+    "type": {
+        "name": "dataset"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 83
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Financial Services",
+            "value": "dataset.industry.financial_services"
+        },
+        {
+            "label": "Healthcare",
+            "value": "dataset.industry.healthcare"
+        },
+        {
+            "label": "Commerce",
+            "value": "dataset.industry.commerce"
+        }
+    ]
+}

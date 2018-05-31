@@ -1,0 +1,25 @@
+{
+    "name": "time_series_anomaly_detection",
+    "title": "Time series anomaly detection",
+    "description": "Anomaly detection algorithm best used for IoT, Fraud detection and IT Ops.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 64
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

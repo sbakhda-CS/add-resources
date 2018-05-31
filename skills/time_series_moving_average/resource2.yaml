@@ -1,0 +1,25 @@
+{
+    "name": "time_series_moving_average",
+    "title": "Time series moving average",
+    "description": "Returns the Simple, Exponential and Cumulative Moving Averages of a time series. This can be used to smooth a time series.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 92
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

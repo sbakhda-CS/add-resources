@@ -1,0 +1,45 @@
+{
+    "name": "sentiment_analysis",
+    "title": "Sentiment Analysis",
+    "description": "Inspects text and returns an inference of the prevailing sentiment (POSITIVE, NEUTRAL, or NEGATIVE)along with sentiment score on a scale of 0-1.",
+    "type": {
+        "name": "skill"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 77
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Google",
+            "value": "skill.service_providers.google"
+        },
+        {
+            "label": "AWS",
+            "value": "skill.service_providers.aws"
+        },
+        {
+            "label": "Cloud",
+            "value": "skill.deployment.cloud"
+        },
+        {
+            "label": "Emotion",
+            "value": "skill.cognitive_function.emotion"
+        },
+        {
+            "label": "Supervised Learning",
+            "value": "skill.machine_learning_style.supervised_learning"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "skill.service_provider"
+        }
+    ]
+}

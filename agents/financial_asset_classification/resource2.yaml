@@ -1,0 +1,29 @@
+{
+    "name": "financial_asset_classification",
+    "title": "Financial Asset Classification",
+    "description": "Financial assets are stored on physical hardware. MS needs to retain assets for a certain period of time based on different regulations. They have a 3 member legal team, who review and classify manually. CS to develop solution which classifies given asset into one of 68 categories. As of now, MS has 70k assets. Every year 300 assets are added. CS solution to help classify ongoing assets, old assets used for testing and honing solution",
+    "type": {
+        "name": "agent"
+    },
+    "icon": "http://icon.png",
+    "price": {
+        "unit": "CCU",
+        "value": 59
+    },
+    "tutorials": [
+        {
+            "description": "Tutorial Description",
+            "videoLink": "http://video.avi"
+        }
+    ],
+    "tags": [
+        {
+            "label": "Financial Services",
+            "value": "agent.industry.financial_services"
+        },
+        {
+            "label": "CognitiveScale",
+            "value": "agent.service_provider"
+        }
+    ]
+}
