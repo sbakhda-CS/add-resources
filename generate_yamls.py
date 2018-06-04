@@ -2,13 +2,16 @@ from __future__ import print_function
 from apiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
-import csv, json, os, shutil, random, yaml, subprocess, glob, io
+import json, os, random, yaml, subprocess, io
 
 
+# initializes the resource type, and the columns in the google sheet that
+    # correspond to in the google sheet
 def init(rss_type, path):
 
+
     if rss_type == "dataset":
-        rss_type, titl_col, desc_col, tag_col = "dataset",  0, 1, [4,6]
+        rss_type, titl_col, desc_col, tag_col = "dataset",  0, 1, [2]
     elif rss_type == "skill":
         rss_type, titl_col, desc_col, tag_col = "skill",  0, 1, [2]
     elif rss_type == "agent":
@@ -16,15 +19,22 @@ def init(rss_type, path):
     else:
         rss_type, titl_col, desc_col, tag_col = None, 0, 1, 2
 
-    # creating an empty resource folder if it doesn't exist
+    # creating an empty [resource] folder if it doesn't exist
     if not os.path.exists(path + rss_type + '-camel/' + rss_type + 's/'):
         os.makedirs(path + rss_type + '-camel/' + rss_type + 's/')
 
-    return (rss_type, titl_col, desc_col, tag_col), path
+    return (rss_type, titl_col, desc_col, tag_col)
 
 
+# generates resource.yamls and skill.yamls for:
+    # taxonomyfile: path of the taxonomy to be used
+    # resource: the resource type, title column, description column, tag column on gsheet
+    # path: path of the main c12e directory
+    # CHANGE_SKILL_YAML: only modify skill.yamls if the value is 'skill'
+    # CHANGE_RSS_YAML: only modify resource.yamls if the value is 'resource'
 def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
 
+    # defining characteristics of a particular feature
     rss_type, titl_col, desc_col, tag_col = resource
 
     # creating txs array from taxonomy.json
@@ -32,7 +42,7 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
     for pair in range(0, len(txs)):
         txs[pair] = (txs[pair].get('value'), txs[pair].get('key'))
 
-    # Sheet Structure
+    # Sheet Array Structure
     # r[0] = name
     # r[1] = human title
     # r[2] = description
@@ -41,7 +51,7 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
     # Creating data array from the google sheet
     sheet = []
     sheet_raw = sheets_api(rss_type)
-    if sheet_raw == []: return set()
+    if sheet_raw == []: return set(), set()
     for row in sheet_raw:
         sheet_row = ['','','', []]
         for col in range(0, len(row)):
@@ -85,7 +95,7 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
         # get tag key-value from taxonomy.json
         tags = []
         for label in rss_tags:
-
+            # case if tag was added from google sheet, where there are no values given (only labels provided)
             if isinstance(label, str):
                 if label == '': continue
                 og_label = label
@@ -99,6 +109,8 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
                     many_found.add((rss_type + '.[PATH].' + label, tuple(query_results)))
                 else:
                     tags.append(dict({"label" : query_results[0][0], "value" : query_results[0][1]}))
+
+            # case if tag was added from skill.yaml where we have a label and value pair to compare
             if isinstance(label, dict):
                 query_results = list(filter(lambda x: x[0] == label.get('label') and
                                                       cleanup(x[1]) == cleanup(label.get('value')),
@@ -127,7 +139,7 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
             }, "icon": "http://icon.png",
             "price": {
                 "unit": "CCU",
-                "value": random.randint(50,100)
+                "value": random.randint(50, 100)
             }, "tutorials": [
                 {
                     "description": "Tutorial Description",
@@ -159,12 +171,11 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
                 final_write = open(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' +  'skill.yaml', 'w')
                 final_write.write(skyaml)
                 yamldump.close()
-            else:
-                # print('not found ' + rss_name)
-                pass
 
     return not_found, many_found
 
+
+# automatically generates tag name from tag label
 def cleanup(s):
     if s == '': return s
     s = s.replace("U.S.", "US")
@@ -185,8 +196,8 @@ def cleanup(s):
     if s[-1] == '_':
         s = s[0:-1]
     s = s.lower()
-
     return s
+
 
 # Converting json dict to list(key-value tuples),
 # then sorting and converting back to json
@@ -206,6 +217,8 @@ def sort_json(fname):
     print('Done\n')
 
 
+# input: the particular rss_type
+# output: the array of values fetched from google sheet
 def sheets_api(rss_type):
     # Setup the Sheets API
     SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
@@ -219,8 +232,7 @@ def sheets_api(rss_type):
     print('Fetching from Google Sheet...')
 
     # Call the Sheets API
-    # SPREADSHEET_ID = '1K5OsO_yhttXHRtuWT83grwVZaC-6GOm6VzRNk3cegnA' # prod
-    SPREADSHEET_ID = '1EsH5FPmODz2oYPQ4weI_Owfa8bDxdQYh3cKEQrNPPUw' # dev
+    SPREADSHEET_ID = '1EsH5FPmODz2oYPQ4weI_Owfa8bDxdQYh3cKEQrNPPUw'
     RANGE_NAME = rss_type +'s-dev' + '!A:Z'
     result = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID,
                                                  range=RANGE_NAME).execute()
@@ -228,26 +240,30 @@ def sheets_api(rss_type):
     return sheet_values
 
 
+# the main function that creates skill.yaml or resource.yaml for a particular rss_type
+def knock_em_down(rss_type):
 
-def knock_em_down():
+    # path to c12e directory
     path = '/Users/sbakhda/dev/c12e-agents-skills/'
 
-
-
+    # path to taxonomy file
     taxonomyfile = path + 'taxonomy.json'
 
+    # prompt that confirms that you want to DELETE existing resource.yamls and generate new ones
+    # type in 'resource' to confirm
     CHANGE_RSS_YAML = input("Do you want to modify RESOURCE.yamls? Confirm with resource:\t")
 
     # sorting taxonomy.json
     sort_json(taxonomyfile)
 
+    # USE WITH CAUTION: delete all resource*.yaml files in the path
     if CHANGE_RSS_YAML == 'resource':
         try:
             subprocess.Popen("find "+path+" -name 'resource*.yaml' -delete")
         except: pass
 
-    rss_type = 'skill'
 
+    # prompt that confirms that you want to MODIFY existing skill.yamls to update the tag section
     if rss_type == 'skill':
         CHANGE_SKILL_YAML = input("Do you want to modify SKILL.yamls? Confirm with skill:\t")
     else:
@@ -255,7 +271,7 @@ def knock_em_down():
 
 
     print('Generating ' + rss_type + ' resource.yamls...')
-    resource, path = init(rss_type, path)
+    resource = init(rss_type, path)
     not_found, many_found = set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML)
     print('Done\n')
 
@@ -270,4 +286,8 @@ def knock_em_down():
         for q in k[1]:
             print('\t'+str(q))
 
-knock_em_down()
+
+if __name__ == '__main__':
+    knock_em_down("agent")
+
+    # knock_em_down("skill")
