@@ -3,7 +3,6 @@ from apiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 import csv, json, os, shutil, random, yaml, subprocess, glob, io
-import generate_taxonomy
 
 
 def init(rss_type, path):
@@ -11,7 +10,7 @@ def init(rss_type, path):
     if rss_type == "dataset":
         rss_type, titl_col, desc_col, tag_col = "dataset",  0, 1, [4,6]
     elif rss_type == "skill":
-        rss_type, titl_col, desc_col, tag_col = "skill",  0, 1, [11]
+        rss_type, titl_col, desc_col, tag_col = "skill",  0, 1, [2]
     elif rss_type == "agent":
         rss_type, titl_col, desc_col, tag_col = "agent",  0, 1, [2,3]
     else:
@@ -57,7 +56,6 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
         if sheet_row != ['','','',[]] and sheet_row != ['','','',['']]:
             sheet.append(sheet_row)
     sheet.pop(0) # removing column headers
-
     not_found = set()
     many_found = set()
 
@@ -90,29 +88,32 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
 
             if isinstance(label, str):
                 if label == '': continue
+                og_label = label
                 label = cleanup(label)
                 query_results = list(filter(lambda x: x[1].split('.')[0] == rss_type and
                                             x[1].split('.')[-1] == label,
                                 txs))
-                if query_results == []: not_found.add(rss_type + '.[PATH].' + label)
-                elif len(query_results) > 1: many_found.add((rss_type + '.[PATH].' + label, query_results))
+                if query_results == []:
+                    not_found.add(rss_type + '.[PATH].' + label + ' - ' + og_label + ' in ' + rss_name)
+                elif len(query_results) > 1:
+                    many_found.add((rss_type + '.[PATH].' + label, tuple(query_results)))
                 else:
                     tags.append(dict({"label" : query_results[0][0], "value" : query_results[0][1]}))
             if isinstance(label, dict):
                 query_results = list(filter(lambda x: x[0] == label.get('label') and
-                                                      x[1] == label.get('value'),
+                                                      cleanup(x[1]) == cleanup(label.get('value')),
                                             txs))
                 if query_results == []:
                     not_found.add(label.get('value')+' - '+label.get('label') + ' in ' + rss_name)
                 elif len(query_results) > 1:
-                    many_found.add((label.get('value'), query_results))
-                else:
-                    tags.append(dict({"label": query_results[0][0], "value": query_results[0][1]}))
+                    many_found.add((label.get('value'), tuple(query_results)))
+                tags.append(dict({"label": label.get('label'), 'value': label.get('value')}))
 
         # remove duplicates
         tags_set = []
         for t in tags:
-            if t not in tags_set: tags_set.append(t)
+            if t not in tags_set:
+                tags_set.append(t)
         tags_set.sort(key=lambda x : x["value"])
         rss_tags = tags_set
 
@@ -146,10 +147,11 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
             if os.path.exists(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' +  'skill.yaml'):
                 skyaml = open(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' +  'skill.yaml', 'r').read()
                 try:
-                    tag_index = skyaml.index('tags:\n')
+                    tag_index = skyaml.index('tags:')
                 except ValueError:
+                    print('no tags ' + rss_name)
                     continue
-                yaml_json = yaml.load(skyaml[tag_index:])
+                yaml_json = yaml.load(skyaml[tag_index-1:])
                 yaml_json['tags'] = rss_tags
                 yamldump = io.StringIO("")
                 yaml.dump(yaml_json, yamldump, default_flow_style=False)
@@ -157,6 +159,9 @@ def set_em_up(taxonomyfile, resource, path, CHANGE_SKILL_YAML, CHANGE_RSS_YAML):
                 final_write = open(path + rss_type+'-camel/' + rss_type+'s/' + rss_name+'/' +  'skill.yaml', 'w')
                 final_write.write(skyaml)
                 yamldump.close()
+            else:
+                # print('not found ' + rss_name)
+                pass
 
     return not_found, many_found
 
@@ -183,6 +188,23 @@ def cleanup(s):
 
     return s
 
+# Converting json dict to list(key-value tuples),
+# then sorting and converting back to json
+def sort_json(fname):
+    print('\nSorting jsons in taxonomy.json...')
+    txs = json.load(open(fname))['taxonomies']
+    k = list({(j.get('key'), j.get('value')) for j in txs})
+    k.sort(key=lambda x: x[0])
+    file = open(fname, 'w').close()
+    file = open(fname, 'a')
+    file.write('{\n  "taxonomies": [')
+    for i in range(0,len(k)):
+        j = {"key": k[i][0].lower(), "value": k[i][1]}
+        json.dump(j, file, indent=8)
+        if i != len(k)-1: file.write(',\n')
+    file.write('\n  ]\n}')
+    print('Done\n')
+
 
 def sheets_api(rss_type):
     # Setup the Sheets API
@@ -207,24 +229,24 @@ def sheets_api(rss_type):
 
 
 
-def knock_em():
+def knock_em_down():
     path = '/Users/sbakhda/dev/c12e-agents-skills/'
-    # path = '/'.join(os.path.realpath(__file__).split('/')[0:-1]) + '/'
 
-    taxonomyfile = 'taxonomy.json'
+
+
+    taxonomyfile = path + 'taxonomy.json'
 
     CHANGE_RSS_YAML = input("Do you want to modify RESOURCE.yamls? Confirm with resource:\t")
 
     # sorting taxonomy.json
-    generate_taxonomy.sort_json(taxonomyfile)
+    sort_json(taxonomyfile)
 
     if CHANGE_RSS_YAML == 'resource':
         try:
             subprocess.Popen("find "+path+" -name 'resource*.yaml' -delete")
         except: pass
 
-
-    rss_type = 'agent'
+    rss_type = 'skill'
 
     if rss_type == 'skill':
         CHANGE_SKILL_YAML = input("Do you want to modify SKILL.yamls? Confirm with skill:\t")
@@ -248,4 +270,4 @@ def knock_em():
         for q in k[1]:
             print('\t'+str(q))
 
-knock_em()
+knock_em_down()
